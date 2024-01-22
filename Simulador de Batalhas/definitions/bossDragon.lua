@@ -1,6 +1,6 @@
 local bossDragon = {}
 
-bossDragon.name = "Lilithy"
+bossDragon.name = "Pyrothornix"
 bossDragon.description = "Uma Criatua que guarda a Montanha de Lava Infernal no Reino Demoniaco"
 
 bossDragon.maxHealth = 50
