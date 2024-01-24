@@ -1,4 +1,4 @@
--- local utils = require "utils"
+local utils = require "Simulador de Batalhas.utils"
 
 local actions = {}
 
@@ -23,11 +23,13 @@ function actions.buil()
         local damage = math.max(1, math.ceil(rawDamage))
 
         if success then
-            -- 3. Aplicar o dano em caso de sucesso
-            print(string.format("Você atacou a criatura e deu %d pontos de dano", damage))
+             -- 3. Aplicar o dano em caso de sucesso
+             creatureData.health = creatureData.health - damage
 
-            -- 4. Apresentar resultado como print
-            creatureData.health = creatureData.health - damage
+             -- 4. Apresentar resultado como print
+             print(string.format("%s atacou a criatura e deu %d pontos de dano", playerData.name, damage))
+             local healthRate = math.floor((creatureData.health / creatureData.maxHealth) * 10)
+             print(string.format("%s: %s", creatureData.name, utils.getProgressBar(healthRate)))
         else
             print("você é tao fraco que nem dano nesta criatura consegue dar")
         end

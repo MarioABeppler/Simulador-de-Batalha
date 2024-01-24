@@ -57,7 +57,7 @@ end
 --- @param creature table
 ---
 function utils.printCreature(creature)
-
+-- Calculate health rate
 local healthRate = math.floor((creature.health / creature.maxHealth) * 10)
 
     -- Cartão

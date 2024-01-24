@@ -34,6 +34,11 @@ while true do
         local isActionValid = chosenAction ~= nil
         print("chonsenIndex" .. chonsenIndex)
         --Simuladr o turno do Jogador
+        if isActionValid then
+                chosenAction.execute(player, boss)
+        else
+                print(string.format("Sua escolha é inválida. %s perdeu a vez.", player.name))
+        end
 
         -- Criatura ficou sem vida
         if boss.health <= 0 then
