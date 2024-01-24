@@ -11,7 +11,7 @@ function actions.buil()
 
     -- Atacar com espada
     local swordAttack = {
-       descripion = "Atacar com a espada",
+       description = "Atacar com a espada",
        requirement = nil,
        execute = function(playerData, creatureData)
         --1 definir chance de sucesso
@@ -50,7 +50,7 @@ function actions.buil()
             print(string.format("%s usou uma poção e recuperou alguns pontos de vida.", playerData.name))
         end
     }
-    
+
     --papulations list
     actions.list[#actions.list + 1] = swordAttack
     actions.list[#actions.list + 1] = regenPotion
