@@ -36,21 +36,21 @@ function actions.buil()
 
     --usar poção de regeneração
     local regenPotion = {
-        descripion = "Tomar uma poção de regeneração",
-        requirement = function (playerData, creatureData)
+        description = "Tomar uma poção de regeneração.",
+        requirement = function(playerData, creatureData)
             return playerData.potions >= 1
         end,
         execute = function(playerData, creatureData)
-            -- Tirar poção do inventario
+            -- Tirar poção do inventário
             playerData.potions = playerData.potions - 1
 
-            --Recupera Vida
+            -- Recuperar vida
             local regenPoints = 10
             playerData.health = math.min(playerData.maxHealth, playerData.health + regenPoints)
-            print("$s Você recuperou alguns pontos de vida", playerData.name)
+            print(string.format("%s usou uma poção e recuperou alguns pontos de vida.", playerData.name))
         end
     }
-
+    
     --papulations list
     actions.list[#actions.list + 1] = swordAttack
     actions.list[#actions.list + 1] = regenPotion
