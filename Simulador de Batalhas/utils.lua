@@ -54,24 +54,44 @@ end
 
 ---
 --- Faz um print das informações de uma creatura.
---- @param creature table
+--- @param player table
 ---
-function utils.printCreature(creature)
+function utils.printPlayer(player)
 -- Calculate health rate
-local healthRate = math.floor((creature.health / creature.maxHealth) * 10)
+local healthRate = math.floor((player.health / player.maxHealth) * 10)
 
     -- Cartão
 print("| ")
-print("| Nome: " .. creature.name)
-print("| Descrição: " .. creature.description)
+print("| Nome: " .. player.name)
 print("| ")
 print("| Atributos:")
 print("|    Vida:         " .. utils.getProgressBar(healthRate))
-print("|    Ataque:       " .. utils.getProgressBar(creature.attack))
-print("|    Defesa:       " .. utils.getProgressBar(creature.defense))
-print("|    Velocidade:   " .. utils.getProgressBar(creature.speed))
+print("|    Ataque:       " .. utils.getProgressBar(player.attack))
+print("|    Defesa:       " .. utils.getProgressBar(player.defense))
+print("|    Velocidade:   " .. utils.getProgressBar(player.speed))
 print("| ")
 end
+
+---
+--- Faz um print das informações de uma creatura.
+--- @param creature table
+---
+function utils.printCreature(creature)
+    -- Calculate health rate
+    local healthRate = math.floor((creature.health / creature.maxHealth) * 10)
+    
+        -- Cartão
+    print("| ")
+    print("| Nome: " .. creature.name)
+    print("| Descrição: " .. creature.description)
+    print("| ")
+    print("| Atributos:")
+    print("|    Vida:         " .. utils.getProgressBar(healthRate))
+    print("|    Ataque:       " .. utils.getProgressBar(creature.attack))
+    print("|    Defesa:       " .. utils.getProgressBar(creature.defense))
+    print("|    Velocidade:   " .. utils.getProgressBar(creature.speed))
+    print("| ")
+    end
 
 ---Pergunta ao usuário por um número, que é retornado pela função.
 ---@return any

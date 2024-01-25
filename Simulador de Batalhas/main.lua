@@ -80,6 +80,10 @@ if player.health <= 0 then
         print()
         print("🥳")
         print(string.format("%s prevaleceu e venceu %s.", player.name, boss.name))
+        bossActions.drop(player, boss)
         print("Parabéns!!!")
         print()
     end
+
+-- Mostra os status atual do player
+utils.printPlayer(player)

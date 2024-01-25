@@ -92,4 +92,10 @@ function actions.getValidActions(playerData, creatureData)
     return validActions
 end
 
+function actions.drop(playerData, creatureData)
+    print(string.format("como prova de sua Vitoria contra %s, %s obteve %s como trofeu", creatureData.name, playerData.name, creatureData.item))
+    playerData.defense = playerData.defense + 3
+    print(string.format("A defesa de %s subiu em 3 pontos", playerData.name))
+end
+
 return actions
