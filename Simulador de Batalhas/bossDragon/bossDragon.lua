@@ -7,6 +7,6 @@ bossDragon.maxHealth = 20
 bossDragon.health = 20
 bossDragon.attack = 5
 bossDragon.defense = 6
-bossDragon.speed = 0
+bossDragon.speed = 2
 
 return bossDragon
